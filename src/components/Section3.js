@@ -5,7 +5,7 @@ import Presentation_desktop from '../images/sources-homepage/A110/Presentation_d
 const Section3 = () => {
     const fullScreenImageStyle = {
         width: '100%',
-        height: 'calc(100vh - 80px)', //Adjust height to exclude header
+        height: '100%', //Adjust height to exclude header
        
       };
   return (
