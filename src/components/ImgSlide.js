@@ -1,4 +1,5 @@
-import React, { useState, useRef } from 'react';
+import React, { useRef, useState } from 'react';
+import ImgChassis from "../images/sources-homepage/conception/alpine-bone.jpg";
 import ImgSlideBlue from "../images/sources-homepage/conception/alpine-skin.jpg";
 import './ImgSlide.css'; // Assurez-vous de créer ce fichier CSS
 
@@ -14,14 +15,14 @@ const ImgSlide = () => {
     }
   };
 
-  const handleMouseLeave = () => {
+  const handleMouseUp = () => {
     document.removeEventListener('mousemove', handleMouseMove);
-    document.removeEventListener('mouseup', handleMouseLeave);
+    document.removeEventListener('mouseup', handleMouseUp);
   };
 
   const handleMouseDown = () => {
     document.addEventListener('mousemove', handleMouseMove);
-    document.addEventListener('mouseup', handleMouseLeave);
+    document.addEventListener('mouseup', handleMouseUp);
   };
 
   return (
@@ -30,10 +31,15 @@ const ImgSlide = () => {
       ref={containerRef}
       onMouseDown={handleMouseDown}
     >
-      <div className='background-image'></div>
+      <div 
+        className='background-image'
+        style={{ width: `${sliderPosition}%` }}
+      >
+        <img src={ImgChassis} alt="Alpine Background" className='image' />
+      </div>
       <div 
         className='foreground-image'
-        style={{ width: `${sliderPosition}%` }}
+        style={{ width: `${100 - sliderPosition}%` }}
       >
         <img src={ImgSlideBlue} alt="Alpine Slide Blue" className='image' />
       </div>

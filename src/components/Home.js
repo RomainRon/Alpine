@@ -6,6 +6,7 @@ import Section2 from "./Section2"
 import Section3 from "./Section3"
 import BlueSection from './Bluesection'
 import ImgSlide from '../components/ImgSlide';
+import Section4 from './Section4'
 
 const home = () => {
   return (
@@ -19,6 +20,8 @@ const home = () => {
         <Section3/>
         <BlueSection/>
         <ImgSlide/>
+        <BlueSection/>
+        <Section4/>
         </>
   )
 }
