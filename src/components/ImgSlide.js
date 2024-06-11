@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import ImgSlideBlue from "../images/sources-homepage/conception/alpine-skin.jpg";
-import './ImgSlide.css'; // Assurez-vous de créer ce fichier CSS
+import './ImgSlide.css';
 
 const ImgSlide = () => {
   const [sliderPosition, setSliderPosition] = useState(50); // Initial position at 50%
