@@ -1,18 +1,34 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom';
+import Logo from '../images/pngwing.com_3.png'
 
-const header = () => {
+const Header = () => {
     const headerStyle = {
         backgroundColor: '#5F79FE', // Light blue color
         color: 'white',
         padding: '20px',
+
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center'
+    };
+
+    const titleStyle = {
+        flex: 1,
         textAlign: 'center'
-      };
-      
-  return (
-    <header style={headerStyle} > <h1>ACCUEIL</h1>
-    </header>
-  )
+    };
+
+    const logoStyle = {
+        width: 'auto'
+    };
+
+    return (
+        <header style={headerStyle}>
+            <div style={titleStyle}>
+                <h1>ACCUEIL</h1>
+            </div>
+            <img src={Logo} style={logoStyle} alt="Logo" />
+        </header>
+    )
 }
 
-export default header
+export default Header
