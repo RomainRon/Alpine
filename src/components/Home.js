@@ -7,12 +7,13 @@ import Section3 from "./Section3"
 import BlueSection from './Bluesection'
 import ImgSlide from '../components/ImgSlide';
 import Section4 from './Section4'
+import './Section4.css';
+
 
 const home = () => {
   return (
     <>
-    <Header />
-        
+        <Header />
         <SectionImg/> 
         <BlueSection/>
         <Section2/>
@@ -22,8 +23,15 @@ const home = () => {
         <ImgSlide/>
         <BlueSection/>
         <Section4/>
-        <NavLink to={"/configurateur"}>configurateur</NavLink>
-        </>
+
+        
+ 
+        <div className='divButton'>
+          <button type="button" class="btn btn-outline button">
+            <NavLink className="text" to={"/configurateur"}>Configurer</NavLink>
+          </button>
+        </div>
+    </>
   )
 }
 
