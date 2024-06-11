@@ -6,6 +6,7 @@ const Header = () => {
         backgroundColor: '#5F79FE', // Light blue color
         color: 'white',
         padding: '20px',
+
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center'
