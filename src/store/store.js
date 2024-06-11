@@ -3,7 +3,7 @@ import configuratorReducer from '../features/configuratorSlice';
 
 const store = configureStore({
   reducer: {
-    configurator: configuratorReducer,
+    configurateur: configuratorReducer,
   },
 });
 
