@@ -8,9 +8,6 @@ const header = () => {
         padding: '20px',
         textAlign: 'center'
       };
-
-
-
       
   return (
     <header style={headerStyle} > <h1>ACCUEIL</h1>
