@@ -12,7 +12,7 @@ const home = () => {
   return (
     <>
     <Header />
-        <NavLink to={"/configurateur"}>configurateur</NavLink>
+        
         <SectionImg/> 
         <BlueSection/>
         <Section2/>
@@ -22,6 +22,7 @@ const home = () => {
         <ImgSlide/>
         <BlueSection/>
         <Section4/>
+        <NavLink to={"/configurateur"}>configurateur</NavLink>
         </>
   )
 }
