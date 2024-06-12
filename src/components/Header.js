@@ -3,7 +3,7 @@ import Logo from '../images/pngwing.com_3.png'
 
 const Header = () => {
     const headerStyle = {
-        backgroundColor: '#5F79FE', // Light blue color
+        backgroundColor: '#5F79FE',
         color: 'white',
         padding: '20px',
 

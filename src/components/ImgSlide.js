@@ -1,17 +1,17 @@
 import React, { useRef, useState } from 'react';
 import ImgChassis from "../images/sources-homepage/conception/alpine-bone.jpg";
 import ImgSlideBlue from "../images/sources-homepage/conception/alpine-skin.jpg";
-import './ImgSlide.css'; // Assurez-vous de créer ce fichier CSS
+import './ImgSlide.css';
 
 const ImgSlide = () => {
-  const [sliderPosition, setSliderPosition] = useState(50); // Initial position at 50%
+  const [sliderPosition, setSliderPosition] = useState(50); 
   const containerRef = useRef(null);
 
   const handleMouseMove = (e) => {
     if (containerRef.current) {
       const containerRect = containerRef.current.getBoundingClientRect();
       const newSliderPosition = ((e.clientX - containerRect.left) / containerRect.width) * 100;
-      setSliderPosition(Math.min(Math.max(newSliderPosition, 0), 100)); // Limite entre 0 et 100%
+      setSliderPosition(Math.min(Math.max(newSliderPosition, 0), 100));
     }
   };
 

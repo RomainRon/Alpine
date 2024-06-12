@@ -17,6 +17,7 @@ const initialState = {
             { option: "Bleu Alpine", photo: ImgBleuAlpine, prix: 1800 },
             { option: "Noir Profond", photo: ImgNoirProfond, prix: 840 }
           ],
+          
           jante: [
             { option: "Standard", photo: JanteStandard, prix: 0 },
             { option: "Serac", photo: JanteSerac, prix: 1000 },
