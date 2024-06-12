@@ -5,11 +5,13 @@ import ImgNoirProfond from '../images/configurateur/couleurs/selection/noir.jpg'
 import JanteStandard from '../images/configurateur/jantes/selection/jante-standard.jpg';
 import JanteSerac from '../images/configurateur/jantes/selection/jante-serac.jpg';
 import JanteLegend from '../images/configurateur/jantes/selection/jante-legende.jpg';
+import CarModels from '../images/configurateur/modele/pure/modele_pure-couleur_blanche-jante_serac (3).jpg';
 
 const initialState = {
   pure: [
     {
       prix: 54700,
+      photo: CarModels,
       couleur: [
         {
           color: [
@@ -28,7 +30,6 @@ const initialState = {
   ],
   legend: [
     {
-      prix: 58500,
       color: [
         { option: "Blanc Glacier", photo: ImgBlancGlacier, prix: 0 },
         { option: "Bleu Alpine", photo: ImgBleuAlpine, prix: 1800 },
@@ -60,9 +61,16 @@ const configuratorSlice = createSlice({
       state.selectedOptions = {};
       state.price = 0;
     },
+
+     modele: (state, action) => {
+         const modeleIndex = action.payload;
+        if (state.pure[modeleIndex]) {
+            state.pure.photo = state.pure[modeleIndex].photo
+        }
+     }
   },
 });
 
-export const { nextStep, prevStep, selectOption, resetConfiguration } = configuratorSlice.actions;
+export const { nextStep, prevStep, selectOption, resetConfiguration, modele } = configuratorSlice.actions;
 
 export default configuratorSlice.reducer;
