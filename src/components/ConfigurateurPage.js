@@ -16,19 +16,19 @@ const Configurateur = () => {
       <Header />
       <div className='row'>
         <div>
-          <img src={pure[0].couleur[0].color[0].photo} alt={pure[0].couleur[0].color[0].option} />
-          <p>{pure[0].couleur[0].color[0].option}</p>
-          <p>{pure[0].couleur[0].color[0].prix} €</p>
+          <img src={pure[0].color[0].photo} alt={pure[0].color[0].option} />
+          <p>{pure[0].color[0].option}</p>
+          <p>{pure[0].color[0].prix} €</p>
         </div>
         <div>
-          <img src={pure[0].couleur[0].color[1].photo} alt={pure[0].couleur[0].color[1].option} />
-          <p>{pure[0].couleur[0].color[1].option}</p>
-          <p>{pure[0].couleur[0].color[1].prix} €</p>
+          <img src={pure[0].color[1].photo} alt={pure[0].color[1].option} />
+          <p>{pure[0].color[1].option}</p>
+          <p>{pure[0].color[1].prix} €</p>
         </div>
         <div>
-          <img src={pure[0].couleur[0].color[2].photo} alt={pure[0].couleur[0].color[2].option} />
-          <p>{pure[0].couleur[0].color[2].option}</p>
-          <p>{pure[0].couleur[0].color[2].prix} €</p>
+          <img src={pure[0].color[2].photo} alt={pure[0].color[2].option} />
+          <p>{pure[0].color[2].option}</p>
+          <p>{pure[0].color[2].prix} €</p>
         </div>
       </div>
     </>

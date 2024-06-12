@@ -10,8 +10,6 @@ const initialState = {
   pure: [
     {
       prix: 54700,
-      couleur: [
-        {
           color: [
             { option: "Blanc Glacier", photo: ImgBlancGlacier, prix: 0 },
             { option: "Bleu Alpine", photo: ImgBleuAlpine, prix: 1800 },
@@ -22,13 +20,12 @@ const initialState = {
             { option: "Standard", photo: JanteStandard, prix: 0 },
             { option: "Serac", photo: JanteSerac, prix: 1000 },
           ]
-        }
-      ],
-    }
+        },
+      
+    
   ],
   legend: [
     {
-      prix: 58500,
       color: [
         { option: "Blanc Glacier", photo: ImgBlancGlacier, prix: 0 },
         { option: "Bleu Alpine", photo: ImgBleuAlpine, prix: 1800 },
