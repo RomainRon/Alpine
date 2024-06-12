@@ -1,7 +1,7 @@
 import React from 'react';
 import Img from '../images/sources-homepage/ALPINE-LEGENDE-1 1.png';
 import Img2 from '../images/sources-homepage/road 1.png';
-import './Section2.css'; // Import the CSS file
+import './Section2.css';
 
 const Section2 = () => {
     return (

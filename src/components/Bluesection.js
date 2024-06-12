@@ -3,7 +3,7 @@ import React from 'react'
 const blueSection = () => {
 
     const blueStyle = {
-        backgroundColor: '#5F79FE', // Light blue color
+        backgroundColor: '#5F79FE',
         color: 'white',
         padding: '35px',
         textAlign: 'center'

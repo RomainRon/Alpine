@@ -1,9 +1,9 @@
 import React from 'react'; 
-import alpineImage from '../images/alpine1.jpg'; // Importez l'image
+import alpineImage from '../images/alpine1.jpg'; 
 const sectionImg = () => {
     const fullScreenImageStyle = {
             width: '100%',
-            height: 'calc(100vh - 80px)', //Adjust height to exclude header
+            height: 'calc(100vh - 80px)',
            
           };
   return (
