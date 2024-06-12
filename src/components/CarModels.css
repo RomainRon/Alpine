@@ -1,0 +1,31 @@
+
+.car-models-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .car-model {
+    text-align: center;
+  }
+  
+  .car-model img {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+  }
+  
+  .select-button {
+    background-color: #5F79FE;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .select-button:hover {
+    background-color: rgb(112, 199, 246);
+  }
+  
