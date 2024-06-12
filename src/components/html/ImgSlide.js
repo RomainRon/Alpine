@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
-import ImgChassis from "../images/sources-homepage/conception/alpine-bone.jpg";
-import ImgSlideBlue from "../images/sources-homepage/conception/alpine-skin.jpg";
+import ImgChassis from "../../images/sources-homepage/conception/alpine-bone.jpg";
+import ImgSlideBlue from "../../images/sources-homepage/conception/alpine-skin.jpg";
 import './ImgSlide.css';
 
 const ImgSlide = () => {

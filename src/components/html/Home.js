@@ -5,7 +5,7 @@ import SectionImg from "./SectionImg"
 import Section2 from "./Section2"
 import Section3 from "./Section3"
 import BlueSection from './Bluesection'
-import ImgSlide from '../components/ImgSlide';
+import ImgSlide from './ImgSlide';
 import Section4 from './Section4'
 import './Section4.css';
 

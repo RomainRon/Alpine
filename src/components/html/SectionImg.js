@@ -1,5 +1,5 @@
 import React from 'react'; 
-import alpineImage from '../images/alpine1.jpg'; 
+import alpineImage from '../../images/alpine1.jpg'; 
 const sectionImg = () => {
     const fullScreenImageStyle = {
             width: '100%',

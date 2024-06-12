@@ -1,5 +1,5 @@
 import React from 'react';
-import Presentation_desktop from '../images/sources-homepage/A110/Presentation_desktop-1.png'
+import Presentation_desktop from '../../images/sources-homepage/A110/Presentation_desktop-1.png'
 
 
 const Section3 = () => {
