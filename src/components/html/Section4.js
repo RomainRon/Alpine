@@ -1,5 +1,5 @@
 import React from 'react';
-import ImgAlpineConfig from '../images/AlpineConfig.png';
+import ImgAlpineConfig from '../../images/AlpineConfig.png';
 
 
 const Section4 = () => {

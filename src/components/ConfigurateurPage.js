@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from './Header';
+import Header from './html/Header';
 import { useSelector } from 'react-redux';
 import BlancGlacier from '../images/configurateur/couleurs/selection/blanc.jpg';
 import BleuAlpine from '../images/configurateur/couleurs/selection/bleu.jpg';
