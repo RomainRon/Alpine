@@ -3,6 +3,7 @@ import Carousel from 'react-bootstrap/Carousel';
 import ImgBlancGlacier from '../images/configurateur/couleurs/selection/blanc.jpg';
 import ImgBleuAlpine from '../images/configurateur/couleurs/selection/bleu.jpg';
 import ImgNoirProfond from '../images/configurateur/couleurs/selection/noir.jpg';
+import ConfigBar from '../components/ConfigBar';
 import { useDispatch, useSelector } from 'react-redux';
 import {color} from '../features/configuratorSlice'
 
@@ -51,6 +52,7 @@ const ChoiceColor = () => {
           <img src={ImgNoirProfond} style={btnStyle} alt="Noir Profond" />
         </button>
       </div>
+    <ConfigBar></ConfigBar>
     </>
   );
 };

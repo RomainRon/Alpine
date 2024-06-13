@@ -25,8 +25,6 @@ const home = () => {
         <BlueSection/>
         <Section4/>
 
-        
- 
         <div className='divButton'>
           <button type="button" class="btn btn-outline button">
             <NavLink className="text" to={"/configurateur"}>Configurer</NavLink>

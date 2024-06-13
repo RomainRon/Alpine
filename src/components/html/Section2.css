@@ -4,25 +4,30 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    padding: 0 20px;
 }
 
 .text-and-image {
     margin-bottom: 20px;
+    max-width: 100%;
 }
 
 .image {
     margin: 10px;
     padding: 20px;
+    max-width: 100%;
 }
 
 .image2 {
     margin: 10px;
+    max-width: 100%;
 }
 
 @media (min-width: 768px) {
     .section {
         flex-direction: row;
         text-align: left;
+        padding: 0 40px;
     }
 
     .text-and-image {

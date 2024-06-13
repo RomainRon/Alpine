@@ -2,14 +2,14 @@
 .car-models-container {
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: 70px;
     flex-wrap: wrap;
   }
   
   .car-model {
     text-align: center;
     flex: 1 1 45%;
-    max-width: 500px; 
+    max-width: 900px; 
   }
   
   .car-model img {

@@ -9,13 +9,14 @@ import NoirProfond from '../images/configurateur/couleurs/selection/noir.jpg';
 import JanteStandard from '../images/configurateur/jantes/selection/jante-standard.jpg';
 import JanteSerac from '../images/configurateur/jantes/selection/jante-serac.jpg';
 import JanteLegend from '../images/configurateur/jantes/selection/jante-legende.jpg';
+import ConfigBar from './ConfigBar';
 
 const Configurateur = () => {
   const pure = useSelector(state => state.configurateur.pure);
   
   return (
     <>
-      <Header />
+       <Header />
       <CarModels />
     </>
   );

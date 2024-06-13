@@ -16,6 +16,7 @@ const initialState = {
       { option: "Bleu Alpine", photo: ImgBleuAlpine, prix: 1800 },
       { option: "Noir Profond", photo: ImgNoirProfond, prix: 840 }
     ],
+    selectedColor: null,
   },
   legend: [
     {
@@ -69,16 +70,20 @@ const configuratorSlice = createSlice({
         state.pure.photo = state.pure[modeleIndex].photo;
       }
     },
-    color: (state, action) => {
-      const colorIndex = action.payload;
-      const selectedColor = state.pure.color[colorIndex];
-      if (selectedColor) {
-        state.pure.photo = selectedColor.photo;
+
+    selectColor: (state, action) => {
+      const { modelIndex, colorIndex } = action.payload;
+      const selectedModel = state.pure[modelIndex];
+      if (selectedModel) {
+        selectedModel.selectedColor = selectedModel.colors[colorIndex];
+        selectedModel.photo = selectedModel.colors[colorIndex].photo;
+        state.price += selectedModel.colors[colorIndex].prix;
       }
     }
   }
 });
 
-export const { nextStep, prevStep, selectOption, resetConfiguration, modele, color } = configuratorSlice.actions;
+export const { nextStep, prevStep, selectOption, resetConfiguration, modele, selectColor } = configuratorSlice.actions;
+
 
 export default configuratorSlice.reducer;
