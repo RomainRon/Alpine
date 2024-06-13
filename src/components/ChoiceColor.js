@@ -4,11 +4,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectColor } from '../features/configuratorSlice';
 import ConfigBar from '../components/ConfigBar';
 
+
 const ChoiceColor = () => {
   const btnStyle = {
     height: '35px'
   };
   const configCar = useSelector(state => state.configurateur.configCar);
+
   const dispatch = useDispatch();
 
   const handleColor = (colorIndex) => {
