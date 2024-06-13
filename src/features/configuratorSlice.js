@@ -9,30 +9,22 @@ const initialState = {
     {
       prix: 54700,
       photo: CarModels,
-
-        color: [
-          { option: "Blanc Glacier", photo: ImgBlancGlacier, prix: 0 },
-          { option: "Bleu Alpine", photo: ImgBleuAlpine, prix: 1800 },
-          { option: "Noir Profond", photo: ImgNoirProfond, prix: 840 }
-        ],
-        // jante: [
-        //   { option: "Standard", photo: JanteStandard, prix: 0 },
-        //   { option: "Serac", photo: JanteSerac, prix: 1000 }
-        // ]
-      
+      colors: [
+        { option: "Blanc Glacier", photo: ImgBlancGlacier, prix: 0 },
+        { option: "Bleu Alpine", photo: ImgBleuAlpine, prix: 1800 },
+        { option: "Noir Profond", photo: ImgNoirProfond, prix: 840 }
+      ],
+      selectedColor: null,
     }
   ],
   legend: [
     {
       options: {
-        color: [
+        colors: [
           { option: "Blanc Glacier", photo: ImgBlancGlacier, prix: 0 },
           { option: "Bleu Alpine", photo: ImgBleuAlpine, prix: 1800 },
           { option: "Noir Profond", photo: ImgNoirProfond, prix: 840 }
-        ],
-        // jante: [
-        //   { option: "Legend", photo: JanteLegend, prix: 0 }
-        // ]
+        ]
       }
     }
   ],
@@ -66,10 +58,19 @@ const configuratorSlice = createSlice({
       if (state.pure[modeleIndex]) {
         state.pure.photo = state.pure[modeleIndex].photo;
       }
+    },
+    selectColor: (state, action) => {
+      const { modelIndex, colorIndex } = action.payload;
+      const selectedModel = state.pure[modelIndex];
+      if (selectedModel) {
+        selectedModel.selectedColor = selectedModel.colors[colorIndex];
+        selectedModel.photo = selectedModel.colors[colorIndex].photo;
+        state.price += selectedModel.colors[colorIndex].prix;
+      }
     }
   }
 });
 
-export const { nextStep, prevStep, selectOption, resetConfiguration, modele } = configuratorSlice.actions;
+export const { nextStep, prevStep, selectOption, resetConfiguration, modele, selectColor } = configuratorSlice.actions;
 
 export default configuratorSlice.reducer;

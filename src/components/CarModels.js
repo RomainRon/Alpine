@@ -23,7 +23,11 @@ const CarModels = () => {
       <div className="car-model">
         <img src={Model1} alt="Model 1" />
         <p>Modèle Legend</p>
-        <button className="select-button">Sélectionner</button>
+
+        <button className="select-button">
+        <NavLink className="text" to={"/colorCar"}>Sélectionner</NavLink>
+        </button>
+
       </div>
       <div className="car-model">
         <img src={Model2} alt="Model 2" />

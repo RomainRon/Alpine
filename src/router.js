@@ -17,7 +17,6 @@ const router = createBrowserRouter([
     path: "/colorCar",
     element: <ChoiceColor />,
   },
-
 ]);
 
 export default router;
