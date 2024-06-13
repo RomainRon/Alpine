@@ -12,7 +12,7 @@ const initialState = {
     {
       prix: 54700,
       photo: CarModels,
-      options: {
+
         color: [
           { option: "Blanc Glacier", photo: ImgBlancGlacier, prix: 0 },
           { option: "Bleu Alpine", photo: ImgBleuAlpine, prix: 1800 },
@@ -22,7 +22,7 @@ const initialState = {
           { option: "Standard", photo: JanteStandard, prix: 0 },
           { option: "Serac", photo: JanteSerac, prix: 1000 }
         ]
-      }
+      
     }
   ],
   legend: [
@@ -57,7 +57,6 @@ const configuratorSlice = createSlice({
     selectOption: (state, action) => {
       const { step, option } = action.payload;
       state.selectedOptions[step] = option;
-      // Update price based on selected options
       state.price += option.prix;
     },
     resetConfiguration: (state) => {
