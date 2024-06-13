@@ -1,58 +1,47 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-import ImgBlancGlacier from '../images/configurateur/couleurs/selection/blanc.jpg';
-import ImgBleuAlpine from '../images/configurateur/couleurs/selection/bleu.jpg';
-import ImgNoirProfond from '../images/configurateur/couleurs/selection/noir.jpg';
-import ConfigBar from '../components/ConfigBar';
 import { useDispatch, useSelector } from 'react-redux';
-import {selectColor} from '../features/configuratorSlice'
+import { selectColor } from '../features/configuratorSlice';
+import ConfigBar from '../components/ConfigBar';
+
 
 const ChoiceColor = () => {
   const btnStyle = {
     height: '35px'
   };
   const configCar = useSelector(state => state.configurateur.configCar);
-  const dispatch = useDispatch()
-  const handleColor = () => {
-    dispatch(selectColor)
-  }
+
+  const dispatch = useDispatch();
+
+  const handleColor = (colorIndex) => {
+    dispatch(selectColor(colorIndex));
+  };
+
   return (
     <>
       <Carousel>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src={configCar.photo}
-            alt="First slide"
-          />
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src={configCar.photo}
-            alt="Second slide"
-          />
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src={configCar.photo}
-            alt="Third slide"
-          />
-        </Carousel.Item>
+        {configCar.carouselPhoto.map((photo, index) => (
+          <Carousel.Item key={index}>
+            <img
+              className="d-block w-100"
+              src={photo}
+              alt={`Slide ${index + 1}`}
+            />
+          </Carousel.Item>
+        ))}
       </Carousel>
       <div className="btn-group">
-        <button className='btn' onClick={handleColor}>
-          <img src={ImgBlancGlacier} style={btnStyle} alt="Blanc Glacier" />
-        </button>
-        <button className='btn' onClick={handleColor}>
-          <img src={ImgBleuAlpine} style={btnStyle} alt="Bleu Alpine" />
-        </button>
-        <button className='btn' onClick={handleColor}>
-          <img src={ImgNoirProfond} style={btnStyle} alt="Noir Profond" />
-        </button>
+        {configCar.color.map((colorOption, index) => (
+          <button
+            key={index}
+            className='btn'
+            onClick={() => handleColor(index)}
+          >
+            <img src={colorOption.photo} style={btnStyle} alt={colorOption.option} />
+          </button>
+        ))}
       </div>
-    <ConfigBar></ConfigBar>
+      <ConfigBar />
     </>
   );
 };
