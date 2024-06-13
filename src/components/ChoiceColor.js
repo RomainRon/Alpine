@@ -4,24 +4,25 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectColor } from '../features/configuratorSlice';
 import ConfigBar from '../components/ConfigBar';
 
-
 const ChoiceColor = () => {
   const btnStyle = {
     height: '35px'
   };
-  const configCar = useSelector(state => state.configurateur.configCar);
 
+  // Sélection de l'état depuis le Redux store
+  const configCar = useSelector(state => state.configurateur.configCar);
   const dispatch = useDispatch();
 
-  const handleColor = (colorIndex) => {
-    dispatch(selectColor(colorIndex));
+  // Fonction pour gérer le changement de couleur
+  const handleColor = (colorOption) => {
+    dispatch(selectColor(colorOption)); // Dispatch de l'action selectColor avec l'option de couleur
   };
 
   return (
     <>
       <Carousel>
-        {configCar.carouselPhoto.map((photo, index) => (
-          <Carousel.Item key={index}>
+        {configCar.carouselPhoto.selected.map((photo, index) => (
+          <Carousel.Item key={index + 1}>
             <img
               className="d-block w-100"
               src={photo}
@@ -35,7 +36,7 @@ const ChoiceColor = () => {
           <button
             key={index}
             className='btn'
-            onClick={() => handleColor(index)}
+            onClick={() => handleColor(colorOption.option)}
           >
             <img src={colorOption.photo} style={btnStyle} alt={colorOption.option} />
           </button>

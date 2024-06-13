@@ -1,8 +1,20 @@
 import { createSlice } from '@reduxjs/toolkit';
-import ImgBlancGlacier from '../images/configurateur/modele/pure/modele_pure-couleur_blanche-jante_serac (1).jpg';
-import ImgBleuAlpine from '../images/configurateur/modele/pure/modele_pure-couleur_bleu-jante_serac (1).jpg';
-import ImgNoirProfond from '../images/configurateur/modele/pure/modele_pure-couleur_noire-jante_serac (1).jpg';
+import ImgBlancGlacier from '../images/configurateur/couleurs/selection/blanc.jpg';
+import ImgBleuAlpine from '../images/configurateur/couleurs/selection/bleu.jpg';
+import ImgNoirProfond from '../images/configurateur/couleurs/selection/noir.jpg';
 import CarModels from '../images/configurateur/modele/pure/modele_pure-couleur_blanche-jante_serac (3).jpg';
+import ImgBlanc1 from '../images/configurateur/modele/pure/modele_pure-couleur_blanche-jante_serac (1).jpg';
+import ImgBlanc2 from '../images/configurateur/modele/pure/modele_pure-couleur_blanche-jante_serac (2).jpg';
+import ImgBlanc3 from '../images/configurateur/modele/pure/modele_pure-couleur_blanche-jante_serac (3).jpg';
+import ImgBlanc4 from '../images/configurateur/modele/pure/modele_pure-couleur_blanche-jante_serac (4).jpg';
+import ImgBleu1 from '../images/configurateur/modele/pure/modele_pure-couleur_bleu-jante_serac (1).jpg';
+import ImgBleu2 from '../images/configurateur/modele/pure/modele_pure-couleur_bleu-jante_serac (2).jpg';
+import ImgBleu3 from '../images/configurateur/modele/pure/modele_pure-couleur_bleu-jante_serac (3).jpg';
+import ImgBleu4 from '../images/configurateur/modele/pure/modele_pure-couleur_bleu-jante_serac (4).jpg';
+import ImgNoir1 from '../images/configurateur/modele/pure/modele_pure-couleur_noire-jante_serac (1).jpg';
+import ImgNoir2 from '../images/configurateur/modele/pure/modele_pure-couleur_noire-jante_serac (2).jpg';
+import ImgNoir3 from '../images/configurateur/modele/pure/modele_pure-couleur_noire-jante_serac (3).jpg';
+import ImgNoir4 from '../images/configurateur/modele/pure/modele_pure-couleur_noire-jante_serac (4).jpg';
 
 const initialState = {
   pure: {
@@ -28,13 +40,12 @@ const initialState = {
   configCar: {
     prix: 0,
     modele: null,
-    selectedColor: null,
-    carouselPhoto: [
-      "../images/configurateur/modele/pure/modele_pure-couleur_blanche-jante_serac (1).jpg", 
-      "../images/configurateur/modele/pure/modele_pure-couleur_blanche-jante_serac (2).jpg", 
-      "../images/configurateur/modele/pure/modele_pure-couleur_blanche-jante_serac (3).jpg", 
-      "../images/configurateur/modele/pure/modele_pure-couleur_blanche-jante_serac (4).jpg", 
-    ],
+    carouselPhoto: {
+      carouselPhotoBlanc: [ImgBlanc1, ImgBlanc2, ImgBlanc3, ImgBlanc4],
+      carouselPhotoBleu: [ImgBleu1, ImgBleu2, ImgBleu3, ImgBleu4],
+      carouselPhotoNoir: [ImgNoir1, ImgNoir2, ImgNoir3, ImgNoir4],
+      selected:[]
+    },
     color: [
       { option: "Blanc Glacier", photo: ImgBlancGlacier, prix: 0 },
       { option: "Bleu Alpine", photo: ImgBleuAlpine, prix: 1800 },
@@ -73,13 +84,28 @@ const configuratorSlice = createSlice({
       }
     },
     selectColor: (state, action) => {
-      const colorIndex = action.payload;
-      const selectedColor = state.configCar.color[colorIndex];
+      const selectedColorOption = action.payload;
+      const selectedColor = state.configCar.color.find(color => color.option === selectedColorOption);
+    
       if (selectedColor) {
         state.configCar.selectedColor = selectedColor;
-        state.configCar.carouselPhoto = [selectedColor.photo];
+    
+        switch (selectedColorOption) {
+          case "Blanc Glacier":
+            state.configCar.carouselPhoto.selected = state.configCar.carouselPhoto.carouselPhotoBlanc;
+            break;
+          case "Bleu Alpine":
+            state.configCar.carouselPhoto.selected = state.configCar.carouselPhoto.carouselPhotoBleu;
+            break;
+          case "Noir Profond":
+            state.configCar.carouselPhoto.selected = state.configCar.carouselPhoto.carouselPhotoNoir;
+            break;
+          default:
+            state.configCar.carouselPhoto.selected = state.configCar.carouselPhoto.carouselPhotoBlanc; // Par défaut, utilise Blanc Glacier
+        }
       }
     }
+    
   }
 });
 
