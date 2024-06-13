@@ -1,10 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import ImgBlancGlacier from '../images/configurateur/modele/pure/modele_pure-couleur_blanche-jante_serac (1).jpg';
-import ImgBleuAlpine from '../images/configurateur/couleurs/selection/bleu.jpg';
-import ImgNoirProfond from '../images/configurateur/couleurs/selection/noir.jpg';
-import JanteStandard from '../images/configurateur/jantes/selection/jante-standard.jpg';
-import JanteSerac from '../images/configurateur/jantes/selection/jante-serac.jpg';
-import JanteLegend from '../images/configurateur/jantes/selection/jante-legende.jpg';
+import ImgBleuAlpine from '../images/configurateur/modele/pure/modele_pure-couleur_bleu-jante_serac (1).jpg';
+import ImgNoirProfond from '../images/configurateur/modele/pure/modele_pure-couleur_noire-jante_serac (1).jpg';
 import CarModels from '../images/configurateur/modele/pure/modele_pure-couleur_blanche-jante_serac (3).jpg';
 
 const initialState = {
@@ -18,10 +15,10 @@ const initialState = {
           { option: "Bleu Alpine", photo: ImgBleuAlpine, prix: 1800 },
           { option: "Noir Profond", photo: ImgNoirProfond, prix: 840 }
         ],
-        jante: [
-          { option: "Standard", photo: JanteStandard, prix: 0 },
-          { option: "Serac", photo: JanteSerac, prix: 1000 }
-        ]
+        // jante: [
+        //   { option: "Standard", photo: JanteStandard, prix: 0 },
+        //   { option: "Serac", photo: JanteSerac, prix: 1000 }
+        // ]
       
     }
   ],
@@ -33,9 +30,9 @@ const initialState = {
           { option: "Bleu Alpine", photo: ImgBleuAlpine, prix: 1800 },
           { option: "Noir Profond", photo: ImgNoirProfond, prix: 840 }
         ],
-        jante: [
-          { option: "Legend", photo: JanteLegend, prix: 0 }
-        ]
+        // jante: [
+        //   { option: "Legend", photo: JanteLegend, prix: 0 }
+        // ]
       }
     }
   ],
