@@ -5,7 +5,7 @@ import ImgBleuAlpine from '../images/configurateur/couleurs/selection/bleu.jpg';
 import ImgNoirProfond from '../images/configurateur/couleurs/selection/noir.jpg';
 import ConfigBar from '../components/ConfigBar';
 import { useDispatch, useSelector } from 'react-redux';
-import {color} from '../features/configuratorSlice'
+import {selectColor} from '../features/configuratorSlice'
 
 const ChoiceColor = () => {
   const btnStyle = {
@@ -14,7 +14,7 @@ const ChoiceColor = () => {
   const configCar = useSelector(state => state.configurateur.configCar);
   const dispatch = useDispatch()
   const handleColor = () => {
-    dispatch(color)
+    dispatch(selectColor)
   }
   return (
     <>
